@@ -3,42 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pace Financeiro</title>
+    <title>Pace Financeiro - Ideias, Estudos e Devaneios sobre Finanças</title>
+    <meta name="description" content="Compartilhando insights financeiros adquiridos durante minhas corridas matinais. Descomplique suas finanças e saia na corrida!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Pace Financeiro</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Sobre</a></li>
-                    <li><a href="contact.html">Contato</a></li>
-                </ul>
-            </nav>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Pace <span class="logo-accent">Financeiro</span></h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="about.html" class="nav-link">Sobre</a></li>
+                        <li><a href="calculadoras.html" class="nav-link">Calculadoras</a></li>
+                        <li><a href="contact.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar artigos..." class="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <h2>Ideias, Estudos e Devaneios sobre Finanças</h2>
-            <p>Compartilhando insights financeiros adquiridos durante minhas corridas matinais.</p>
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Descomplique suas finanças e saia na corrida!</h2>
+                    <p class="hero-subtitle">Insights financeiros adquiridos durante minhas corridas matinais. Transforme seu ritmo financeiro com disciplina e estratégia.</p>
+                    <a href="#posts" class="cta-button">Ver artigos</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-icon">💰</div>
+                    <div class="hero-icon">🏃‍♂️</div>
+                    <div class="hero-icon">📈</div>
+                </div>
+            </div>
         </section>
 
-        <section class="posts">
-            <!-- Posts do blog serão inseridos aqui -->
-            <article class="post-card">
-                <h3><a href="post-exemplo.html">O Poder dos Juros Compostos: Uma Maratona Financeira</a></h3>
-                <p class="post-meta">Publicado em 08 de junho de 2025 por Manus</p>
-                <p>Descubra como os juros compostos podem transformar seus investimentos em uma verdadeira maratona financeira, superando obstáculos e alcançando seus objetivos a longo prazo.</p>
-                <a href="post-exemplo.html" class="read-more">Leia mais</a>
-            </article>
+        <section class="content-section" id="posts">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h3 class="section-title">Últimos Artigos</h3>
+                        
+                        <article class="post-card featured">
+                            <div class="post-image">
+                                <div class="post-category">Destaque</div>
+                            </div>
+                            <div class="post-content">
+                                <h4><a href="post-juros-compostos.html">O Poder dos Juros Compostos: Uma Maratona Financeira</a></h4>
+                                <p class="post-meta">Publicado em 08 de junho de 2025 • 5 min de leitura</p>
+                                <p class="post-excerpt">Descubra como os juros compostos podem transformar seus investimentos em uma verdadeira maratona financeira, superando obstáculos e alcançando seus objetivos a longo prazo.</p>
+                                <a href="post-juros-compostos.html" class="read-more">Leia mais</a>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <div class="post-category">Investimentos</div>
+                            </div>
+                            <div class="post-content">
+                                <h4><a href="post-diversificacao.html">Diversificação: O Treino Intervalado dos Investimentos</a></h4>
+                                <p class="post-meta">Publicado em 05 de junho de 2025 • 4 min de leitura</p>
+                                <p class="post-excerpt">Assim como no treino intervalado, a diversificação de investimentos alterna entre diferentes ativos para maximizar resultados e reduzir riscos.</p>
+                                <a href="post-diversificacao.html" class="read-more">Leia mais</a>
+                            </div>
+                        </article>
+
+                        <article class="post-card">
+                            <div class="post-image">
+                                <div class="post-category">Planejamento</div>
+                            </div>
+                            <div class="post-content">
+                                <h4><a href="post-metas-financeiras.html">Metas Financeiras: Como Treinar para uma Maratona Econômica</a></h4>
+                                <p class="post-meta">Publicado em 02 de junho de 2025 • 6 min de leitura</p>
+                                <p class="post-excerpt">Estabelecer metas financeiras é como preparar-se para uma maratona: requer disciplina, planejamento e persistência para cruzar a linha de chegada.</p>
+                                <a href="post-metas-financeiras.html" class="read-more">Leia mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside class="sidebar">
+                        <div class="widget">
+                            <h4 class="widget-title">Calculadoras Financeiras</h4>
+                            <div class="calculator-links">
+                                <a href="calculadoras/juros-compostos.html" class="calculator-link">
+                                    <span class="calculator-icon">📊</span>
+                                    <span>Juros Compostos</span>
+                                </a>
+                                <a href="calculadoras/aposentadoria.html" class="calculator-link">
+                                    <span class="calculator-icon">🎯</span>
+                                    <span>Aposentadoria</span>
+                                </a>
+                                <a href="calculadoras/financiamento.html" class="calculator-link">
+                                    <span class="calculator-icon">🏠</span>
+                                    <span>Financiamento</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <h4 class="widget-title">Categorias</h4>
+                            <ul class="category-list">
+                                <li><a href="#" class="category-link">Investimentos <span class="post-count">(8)</span></a></li>
+                                <li><a href="#" class="category-link">Planejamento <span class="post-count">(5)</span></a></li>
+                                <li><a href="#" class="category-link">Economia Pessoal <span class="post-count">(12)</span></a></li>
+                                <li><a href="#" class="category-link">Educação Financeira <span class="post-count">(6)</span></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget newsletter">
+                            <h4 class="widget-title">Newsletter</h4>
+                            <p>Receba insights financeiros direto no seu e-mail!</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Seu e-mail" class="newsletter-input">
+                                <button type="submit" class="newsletter-btn">Inscrever</button>
+                            </form>
+                        </div>
+                    </aside>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Pace Financeiro. Todos os direitos reservados.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Pace Financeiro</h5>
+                    <p>Transformando o ritmo das suas finanças, um passo de cada vez.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Links Úteis</h5>
+                    <ul>
+                        <li><a href="about.html">Sobre</a></li>
+                        <li><a href="calculadoras.html">Calculadoras</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Redes Sociais</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pace Financeiro. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
