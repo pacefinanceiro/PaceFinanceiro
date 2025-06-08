@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Juros Compostos - Pace Financeiro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculator.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Pace <span class="logo-accent">Financeiro</span></h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../about.html" class="nav-link">Sobre</a></li>
+                        <li><a href="../calculadoras.html" class="nav-link active">Calculadoras</a></li>
+                        <li><a href="../contact.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="calculator-main">
+        <div class="container">
+            <div class="calculator-header">
+                <h2>Calculadora de Juros Compostos</h2>
+                <p>Descubra o poder dos juros compostos e veja como seus investimentos podem crescer ao longo do tempo.</p>
+            </div>
+
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="valorInicial">Valor Inicial (R$)</label>
+                        <input type="number" id="valorInicial" value="10000" min="0" step="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valorMensal">Aporte Mensal (R$)</label>
+                        <input type="number" id="valorMensal" value="500" min="0" step="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taxaJuros">Taxa de Juros Anual (%)</label>
+                        <input type="number" id="taxaJuros" value="10" min="0" max="100" step="0.1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tempo">Período (anos)</label>
+                        <input type="number" id="tempo" value="20" min="1" max="50" step="1">
+                    </div>
+
+                    <button class="calculate-btn" onclick="calcularJurosCompostos()">Calcular</button>
+                </div>
+
+                <div class="calculator-results">
+                    <div class="result-card">
+                        <h3>Resultado Final</h3>
+                        <div class="result-value" id="valorFinal">R$ 0,00</div>
+                    </div>
+
+                    <div class="result-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Total Investido:</span>
+                            <span class="detail-value" id="totalInvestido">R$ 0,00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Juros Ganhos:</span>
+                            <span class="detail-value" id="jurosGanhos">R$ 0,00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Rentabilidade:</span>
+                            <span class="detail-value" id="rentabilidade">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="investmentChart" width="800" height="400"></canvas>
+            </div>
+
+            <div class="calculator-info">
+                <h3>Como funciona a Calculadora de Juros Compostos?</h3>
+                <p>Os juros compostos são calculados sobre o valor principal mais os juros acumulados dos períodos anteriores. Esta calculadora considera:</p>
+                <ul>
+                    <li><strong>Valor Inicial:</strong> O montante que você investe no início</li>
+                    <li><strong>Aporte Mensal:</strong> Valor que você adiciona mensalmente ao investimento</li>
+                    <li><strong>Taxa de Juros:</strong> Rentabilidade anual esperada do investimento</li>
+                    <li><strong>Período:</strong> Tempo em anos que o dinheiro ficará investido</li>
+                </ul>
+                <p>Lembre-se: quanto mais tempo seu dinheiro ficar investido, maior será o efeito dos juros compostos!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Pace Financeiro</h5>
+                    <p>Transformando o ritmo das suas finanças, um passo de cada vez.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Links Úteis</h5>
+                    <ul>
+                        <li><a href="../about.html">Sobre</a></li>
+                        <li><a href="../calculadoras.html">Calculadoras</a></li>
+                        <li><a href="../contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Redes Sociais</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pace Financeiro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/calculator.js"></script>
+</body>
+</html>
+
