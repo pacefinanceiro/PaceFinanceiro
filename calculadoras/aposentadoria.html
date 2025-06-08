@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Aposentadoria - Pace Financeiro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculator.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Pace <span class="logo-accent">Financeiro</span></h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../about.html" class="nav-link">Sobre</a></li>
+                        <li><a href="../calculadoras.html" class="nav-link">Calculadoras</a></li>
+                        <li><a href="../contact.html" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="calculator-main">
+        <div class="container">
+            <div class="calculator-header">
+                <h1 class="calculator-title">🎯 Calculadora de Aposentadoria</h1>
+                <p class="calculator-subtitle">Planeje sua aposentadoria como um verdadeiro maratonista financeiro</p>
+            </div>
+
+            <div class="calculator-content">
+                <div class="calculator-form-section">
+                    <div class="form-card">
+                        <h3>Dados Pessoais</h3>
+                        <div class="form-group">
+                            <label for="currentAge">Idade Atual</label>
+                            <input type="number" id="currentAge" value="30" min="18" max="70">
+                            <span class="input-suffix">anos</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="retirementAge">Idade de Aposentadoria</label>
+                            <input type="number" id="retirementAge" value="65" min="50" max="80">
+                            <span class="input-suffix">anos</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lifeExpectancy">Expectativa de Vida</label>
+                            <input type="number" id="lifeExpectancy" value="85" min="70" max="100">
+                            <span class="input-suffix">anos</span>
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+                        <h3>Dados Financeiros</h3>
+                        <div class="form-group">
+                            <label for="currentSavings">Valor Já Poupado</label>
+                            <input type="number" id="currentSavings" value="50000" min="0" step="1000">
+                            <span class="input-prefix">R$</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="monthlyContribution">Contribuição Mensal</label>
+                            <input type="number" id="monthlyContribution" value="1000" min="0" step="50">
+                            <span class="input-prefix">R$</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="annualReturn">Rentabilidade Anual Esperada</label>
+                            <input type="number" id="annualReturn" value="8" min="0" max="20" step="0.1">
+                            <span class="input-suffix">% ao ano</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="desiredIncome">Renda Mensal Desejada na Aposentadoria</label>
+                            <input type="number" id="desiredIncome" value="5000" min="0" step="100">
+                            <span class="input-prefix">R$</span>
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn" onclick="calculateRetirement()">
+                        Calcular Aposentadoria
+                    </button>
+                </div>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="results-card">
+                        <h3>Resultados da Simulação</h3>
+                        <div class="result-grid">
+                            <div class="result-item highlight">
+                                <div class="result-label">Valor Acumulado na Aposentadoria</div>
+                                <div class="result-value" id="totalAccumulated">R$ 0</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Renda Mensal Possível</div>
+                                <div class="result-value" id="monthlyIncome">R$ 0</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Total Investido</div>
+                                <div class="result-value" id="totalInvested">R$ 0</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Rendimentos Gerados</div>
+                                <div class="result-value" id="totalReturns">R$ 0</div>
+                            </div>
+                        </div>
+                        
+                        <div class="viability-analysis" id="viabilityAnalysis">
+                            <!-- Análise de viabilidade será inserida aqui -->
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Evolução do Patrimônio</h3>
+                        <canvas id="retirementChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>Como Funciona a Calculadora de Aposentadoria</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>🎯 Planejamento de Longo Prazo</h4>
+                        <p>Esta calculadora utiliza o conceito de juros compostos para projetar o crescimento do seu patrimônio ao longo dos anos até a aposentadoria. É como treinar para uma maratona: cada contribuição mensal é um passo em direção ao seu objetivo final.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📊 Análise de Viabilidade</h4>
+                        <p>Além de calcular o valor acumulado, a ferramenta analisa se sua estratégia atual é suficiente para atingir a renda mensal desejada na aposentadoria, oferecendo sugestões de ajustes quando necessário.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>💡 Cenários Realistas</h4>
+                        <p>Use rentabilidades conservadoras (6-8% ao ano) para ter projeções mais seguras. Lembre-se: é melhor ser conservador no planejamento e ter surpresas positivas do que o contrário.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Pace Financeiro</h5>
+                    <p>Transformando o ritmo das suas finanças, um passo de cada vez.</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Links Úteis</h5>
+                    <ul>
+                        <li><a href="../about.html">Sobre</a></li>
+                        <li><a href="../calculadoras.html">Calculadoras</a></li>
+                        <li><a href="../contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Redes Sociais</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pace Financeiro. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/retirement-calculator.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
+

@@ -237,3 +237,162 @@
     }
 }
 
+
+/* Estilos adicionais para as novas calculadoras */
+
+/* Estilos para radio buttons customizados */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+    background-color: var(--primary-color);
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Estilos para análise de viabilidade */
+.analysis-success {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 1px solid #10b981;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.analysis-warning {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.analysis-success p, .analysis-warning p {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.analysis-warning ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.analysis-warning li {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+/* Estilos para tabela de comparação */
+.comparison-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.comparison-table-style {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.comparison-table-style th,
+.comparison-table-style td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comparison-table-style th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.comparison-table-style tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.comparison-table-style .positive {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.comparison-table-style .negative {
+    color: var(--error-color);
+    font-weight: 600;
+}
+
+.comparison-summary {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.comparison-summary p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsividade para tabelas */
+@media (max-width: 768px) {
+    .comparison-table-style {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table-style th,
+    .comparison-table-style td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .radio-group {
+        gap: 0.75rem;
+    }
+    
+    .analysis-success,
+    .analysis-warning,
+    .comparison-summary {
+        padding: 1rem;
+    }
+}
+
